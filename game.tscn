@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://block.tscn" type="PackedScene" id=4]
+[ext_resource path="res://pad.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Border1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 321, 81 )
+transform/scale = Vector2( 8, 8.09375 )
+
+[node name="Border3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 113, -82 )
+transform/scale = Vector2( 29.5938, 8.09375 )
+
+[node name="Border4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 117, 242 )
+transform/scale = Vector2( 29.5938, 8.09375 )
+
+[node name="Border2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -81, 81 )
+transform/scale = Vector2( 8, 8.09375 )
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 116, 100 )
+velocity/linear = Vector2( 200, 200 )
+
+[node name="Block" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 18, 40 )
+
+[node name="Block1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 48, 40 )
+
+[node name="Block2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 78, 40 )
+
+[node name="Block3" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 108, 40 )
+
+[node name="Block4" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 138, 40 )
+
+[node name="Block5" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 168, 40 )
+
+[node name="Block6" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 198, 40 )
+
+[node name="Block7" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 18, 30 )
+
+[node name="Block8" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 48, 30 )
+
+[node name="Block9" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 78, 30 )
+
+[node name="Block10" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 108, 30 )
+
+[node name="Block11" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 138, 30 )
+
+[node name="Block12" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 168, 30 )
+
+[node name="Block13" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 198, 30 )
+
+[node name="Block14" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 18, 20 )
+
+[node name="Block15" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 48, 20 )
+
+[node name="Block16" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 78, 20 )
+
+[node name="Block17" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 108, 20 )
+
+[node name="Block18" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 138, 20 )
+
+[node name="Block19" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 168, 20 )
+
+[node name="Block20" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 198, 20 )
+
+[node name="Pad" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 107, 125 )
+
+
