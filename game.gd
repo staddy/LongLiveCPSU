@@ -15,6 +15,8 @@ var font
 var area2d = load("res://area2d.tscn")
 
 func _ready():
+	OS.set_window_maximized(true)
+	#OS.set_window_fullscreen(true)
 	randomize()
 	font = load("res://font.fnt")
 	for x in range(width):
