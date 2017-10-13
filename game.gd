@@ -1,11 +1,15 @@
 extends Node2D
 
+var SCREEN_WIDTH = Globals.get("display/width")
+var SCREEN_HEIGHT = Globals.get("display/height")
+
 var width = 24
 var height = 13
 var matrix = []
 var lettersMatrix = []
 
 var fontSize = 10
+var fontOffset = 3
 var time = 0.0
 
 #var letters = ["б", "г", "д", "ё", "ж", "з", "и", "й", "л", "п", "у", "ф", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
@@ -31,15 +35,33 @@ func _ready():
 			a.set_pos(Vector2(x * fontSize, y * fontSize))
 			add_child(a)
 	set_fixed_process(true)
+	set_process_input(true)
 
 func _fixed_process(delta):
 	update()
+	for x in range(width):
+		for y in range(height):
+			matrix[x][y] *= max(0, 1 - 10.0 * delta)
 
 func _draw():
 	for x in range(width):
 		for y in range(height):
-			if matrix[x][y] != 0:
+			if matrix[x][y] > 0.01:
 				var color = Color(0.1, 0.9, 0.4, matrix[x][y])
 				if(rand_range(0, 100) > 98):
 					lettersMatrix[x][y] = rand_range(0, l)
-				draw_string(font, Vector2(x * fontSize, y * fontSize + fontSize), letters[lettersMatrix[x][y]], color)
+				draw_string(font, Vector2(x * fontSize, (y + 1) * fontSize - fontOffset), letters[lettersMatrix[x][y]], color, -1)
+
+func _input(event):
+	if (event.type == InputEvent.MOUSE_BUTTON or event.type == InputEvent.SCREEN_TOUCH):
+		var e = InputEvent()
+		e.type = InputEvent.ACTION
+		if event.pos.x < SCREEN_WIDTH / 2:
+			print("left")
+			print(event.is_pressed())
+			e.set_as_action("ui_left", event.is_pressed())
+		else:
+			print("right")
+			print(event.is_pressed())
+			e.set_as_action("ui_right", event.is_pressed())
+		Input.parse_input_event(e)
