@@ -54,14 +54,12 @@ func _draw():
 
 func _input(event):
 	if (event.type == InputEvent.MOUSE_BUTTON or event.type == InputEvent.SCREEN_TOUCH):
-		var e = InputEvent()
-		e.type = InputEvent.ACTION
-		if event.pos.x < SCREEN_WIDTH / 2:
-			print("left")
-			print(event.is_pressed())
-			e.set_as_action("ui_left", event.is_pressed())
+		var a;
+		if(event.pos.x < SCREEN_WIDTH / 2):
+			a = "ui_left";
 		else:
-			print("right")
-			print(event.is_pressed())
-			e.set_as_action("ui_right", event.is_pressed())
-		Input.parse_input_event(e)
+			a = "ui_right"
+		if(event.is_pressed()):
+			Input.action_press(a)
+		else:
+			Input.action_release(a)
